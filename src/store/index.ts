@@ -35,7 +35,6 @@ export default createStore({
         }   
       )
       .then(response => {
-        debugger;
         const data = response.data
         const user = {
           name,

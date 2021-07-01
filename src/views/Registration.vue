@@ -1,5 +1,5 @@
 <template>
-  <div class="authForms">
+  <div class="registrationForm">
     <input v-model="user.name" placeholder="Name" type="text" required />
     <input
       v-model="user.password"
@@ -15,8 +15,8 @@
     <button v-on:click="handleRegistration">Create account</button>
     <p>or</p>
     <button v-on:click="handleRedirectToAuthorization">Sign in</button>
+    <div v-if="message" class="message">{{ message }}</div>
   </div>
-  <div v-if="message" class="message">{{ message }}</div>
 </template>
 
 <script lang="ts">
@@ -44,7 +44,7 @@ export default {
       }
     },
     handleRedirectToAuthorization(): void {
-      this.$router.push("Authorization");
+      this.$router.push("authorization");
     },
   },
 };

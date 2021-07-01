@@ -42,7 +42,7 @@ export default createStore({
         }
         if (data.status === "succsess"){
           commit("updateUser", user)
-          router.push("game");
+          router.push({ name: 'Game' });
         }
       })
       .catch(error => {
